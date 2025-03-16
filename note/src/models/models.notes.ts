@@ -1,7 +1,6 @@
 import mongoose, { Document, Schema, model } from "mongoose";
 
 export interface INote extends Document {
-  // _id?: Schema.Types.ObjectId;
   title: string;
   content: string;
   category: Schema.Types.ObjectId;

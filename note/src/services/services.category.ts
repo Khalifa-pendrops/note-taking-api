@@ -2,7 +2,6 @@ import { Category, ICategory } from "../models/models.category";
 
 class CategoryService {
   async createCategory(name: string): Promise<ICategory> {
-    // return new Category(category).save();
     return await Category.create({ name });
   }
   async getAllCategories() {

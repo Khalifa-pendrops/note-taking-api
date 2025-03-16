@@ -3,7 +3,6 @@ import { Category } from "../models/models.category";
 import mongoose from "mongoose";
 
 class NoteService {
-  // find out what exactly is happening here...tabnine did this
   findOne(query: {
     title: Partial<INote> | { _id: mongoose.Types.ObjectId };
   }): INote | PromiseLike<INote | null> | null {

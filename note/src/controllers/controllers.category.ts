@@ -10,14 +10,6 @@ class CategoryController {
         return res.status(400).json({ message: "Category name is required" });
       }
 
-      // const existingCategory = await CategoryService.getCategoryByName(name);
-
-      // if (existingCategory) {
-      //   return res.status(400).json({
-      //     message: "Category with the same name already exists",
-      //     existing_name:
-      //   });
-      // }
       const newCategory = await CategoryService.createCategory(name);
       await newCategory.save();
       res.status(201).json({
@@ -64,7 +56,6 @@ class CategoryController {
       const { id } = req.params;
       const { name } = req.body;
 
-      // Log the incoming request
       console.log(`Request to update category with ID: ${id}`);
       console.log(`Request body: ${JSON.stringify(req.body)}`);
 

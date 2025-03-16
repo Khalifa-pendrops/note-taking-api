@@ -1,6 +1,3 @@
-// import { PopulateOptions } from "mongoose";
-// import { PopulateOptions } from "mongoose";
-// import { Note } from "./../models/Notes";
 import { Request, Response } from "express";
 import NoteService from "../services/services.notes";
 import { INote } from "../models/models.notes";

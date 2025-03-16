@@ -10,9 +10,9 @@ const validationSchema: {
   title: (value) =>
     typeof value === "string" && value.trim().length >= 3
       ? null
-      : "Title must be equla to or more than 3 characters long",
+      : "Title must be at least 5 characters long",
   content: (value) =>
-    typeof value === "string" && value.trim().length >= 10
+    typeof value === "string" && value.trim().length >= 13
       ? null
       : "Content must be at least 10 characters long",
   category: (value) =>
