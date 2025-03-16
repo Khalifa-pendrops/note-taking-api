@@ -15,6 +15,23 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const Notes_1 = require("../models/Notes");
 const router = express_1.default.Router();
+router.post("/category", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const myCategory = new Notes_1.Category({
+            name: req.body.name,
+        });
+        yield myCategory.save();
+        // res.status(201).send(myCategory);
+        res
+            .status(201)
+            .json({ message: "Category Created Successfully", data: myCategory });
+    }
+    catch (err) {
+        console.error(err);
+        // res.status(400).send(err);
+        res.status(400).json({ message: "Server Error" });
+    }
+}));
 router.post("/notes", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const myNote = new Notes_1.Note({

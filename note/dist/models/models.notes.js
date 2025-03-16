@@ -1,28 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Note = exports.Category = void 0;
+exports.Note = void 0;
 const mongoose_1 = require("mongoose");
-const categorySchema = new mongoose_1.Schema({
-    name: { type: String, required: true },
-});
 const noteSchema = new mongoose_1.Schema({
     title: {
         type: String,
         required: true,
+        trim: true,
+        toLowerCase: true,
     },
     content: {
         type: String,
         required: true,
+        trim: true,
+        toLowerCase: true,
     },
     category: {
         type: mongoose_1.Schema.Types.ObjectId,
-        required: true,
         ref: "Category",
+        required: true,
     },
-}, 
-// auto generated createdAt and updatedAT properties
-{
+}, {
     timestamps: true,
 });
-exports.Category = (0, mongoose_1.model)("Category", categorySchema);
 exports.Note = (0, mongoose_1.model)("Note", noteSchema);
